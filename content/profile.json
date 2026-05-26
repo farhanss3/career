@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "locale": "en-US",
+    "theme": "system",
+    "seoTitle": "Jane Doe — Product Engineer",
+    "seoDescription": "Portfolio and story of Jane Doe.",
+    "keywords": ["product", "engineering", "design systems"],
+    "ogImage": {
+      "src": "/images/og/jane-doe.png",
+      "alt": "Jane Doe profile cover"
+    }
+  },
+  "hero": {
+    "name": "Jane Doe",
+    "headline": "Product Engineer building thoughtful web experiences",
+    "subheadline": "I design, code, and ship customer-facing products.",
+    "location": "Austin, TX",
+    "avatar": {
+      "src": "/images/profile/jane-avatar.jpg",
+      "alt": "Portrait of Jane Doe"
+    },
+    "ctas": [
+      { "label": "View Projects", "href": "#projects", "variant": "primary" },
+      { "label": "Contact", "href": "#contact", "variant": "secondary" }
+    ],
+    "tags": [
+      { "id": "frontend", "label": "Frontend" },
+      { "id": "dx", "label": "Developer Experience" }
+    ]
+  },
+  "about": {
+    "summary": "I focus on product velocity, accessibility, and polished UX.",
+    "longFormMdxPath": "content/about.mdx",
+    "highlights": ["10+ years building web apps", "Mentor and team lead"],
+    "stats": [
+      { "label": "Products launched", "value": "24" },
+      { "label": "Teams led", "value": "6" }
+    ]
+  },
+  "timeline": [
+    {
+      "id": "acme-senior-engineer",
+      "title": "Senior Product Engineer",
+      "organization": "Acme Inc.",
+      "startDate": "2022-03-01",
+      "current": true,
+      "tags": [{ "id": "react", "label": "React" }],
+      "links": [{ "href": "https://acme.example", "label": "Company" }]
+    }
+  ],
+  "projects": [
+    {
+      "id": "apollo-dashboard",
+      "name": "Apollo Dashboard",
+      "summary": "Analytics dashboard for customer success teams.",
+      "tags": [
+        { "id": "nextjs", "label": "Next.js" },
+        { "id": "data-viz", "label": "Data Viz" }
+      ],
+      "status": "shipped",
+      "startDate": "2024-01-15",
+      "featured": true,
+      "links": [
+        { "label": "Live Demo", "href": "https://demo.example.com", "type": "demo" },
+        { "label": "Case Study", "href": "/projects/apollo", "type": "case-study" }
+      ]
+    }
+  ],
+  "skills": {
+    "title": "Skills & Tools",
+    "groups": [
+      {
+        "id": "frontend",
+        "label": "Frontend",
+        "skills": [
+          { "id": "typescript", "name": "TypeScript", "level": 5, "years": 8 },
+          { "id": "react", "name": "React", "level": 5, "years": 7 }
+        ]
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "id": "sam-lee",
+      "personName": "Sam Lee",
+      "personRole": "VP Product",
+      "company": "Acme Inc.",
+      "quote": "Jane consistently ships with quality and empathy.",
+      "date": "2025-11-20"
+    }
+  ],
+  "contact": {
+    "title": "Let's build something useful",
+    "intro": "Open to staff-level product engineering roles and advisory.",
+    "email": "jane@example.com",
+    "availability": "Open to remote opportunities",
+    "ctas": [
+      { "label": "Email Me", "href": "mailto:jane@example.com", "variant": "primary" }
+    ]
+  }
+}
