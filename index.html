@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --text: #eef2ff;
+      --muted: #b8c0e0;
+      --accent: #60a5fa;
+      --accent-2: #34d399;
+      --border: #2a3568;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #090e1d, #0f1731);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    p { color: var(--muted); }
+
+    .hero { margin-bottom: 2rem; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: rgba(18, 25, 51, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.78rem;
+      margin-bottom: 0.6rem;
+    }
+    ul { margin: 0.6rem 0 0.2rem 1.1rem; }
+    li { margin-bottom: 0.3rem; color: var(--muted); }
+    .links a {
+      color: var(--accent-2);
+      text-decoration: none;
+      margin-right: 0.7rem;
+      font-weight: 600;
+    }
+
+    .cta {
+      margin: 2.2rem 0;
+      padding: 1.3rem;
+      border: 2px solid var(--accent-2);
+      border-radius: 18px;
+      background: rgba(20, 44, 50, 0.5);
+    }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.9rem; }
+    .btn {
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn-primary { background: var(--accent-2); color: #072118; }
+    .btn-secondary { border-color: var(--accent); color: var(--text); }
+
+    .quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.8rem;
+      margin: 0.9rem 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Selected Work</h1>
+      <p>Product-focused engineer building measurable business outcomes through fast, reliable delivery.</p>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="pill">SaaS Analytics Platform</span>
+          <h3>Growth Dashboard Revamp</h3>
+          <p><strong>My role:</strong> Lead full-stack engineer (React, Node.js, PostgreSQL).</p>
+          <ul>
+            <li>Reduced dashboard load time from 4.2s to 1.1s (74% faster).</li>
+            <li>Improved trial-to-paid conversion by 18% after shipping usage insights and lifecycle triggers.</li>
+            <li>Cut support tickets related to reporting confusion by 31% in 2 quarters.</li>
+          </ul>
+          <p class="links">
+            <a href="https://demo.example.com">Live demo</a>
+            <a href="https://github.com/example/growth-dashboard">Source</a>
+            <a href="https://case-study.example.com/growth-dashboard">Case study</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="pill">Fintech Mobile App</span>
+          <h3>Onboarding Optimization</h3>
+          <p><strong>My role:</strong> Product engineer partnering with design + compliance teams.</p>
+          <ul>
+            <li>Raised onboarding completion rate from 52% to 79% via progressive forms.</li>
+            <li>Decreased account verification drop-off by 26% using real-time validation and clearer status updates.</li>
+            <li>Shipped A/B tests that drove a 12% uplift in first-week activation.</li>
+          </ul>
+          <p class="links">
+            <a href="https://app.example.com">Live app</a>
+            <a href="https://github.com/example/fintech-onboarding">Source</a>
+            <a href="https://www.figma.com/file/example">Prototype</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="pill">Developer Tools</span>
+          <h3>CI Reliability Toolkit</h3>
+          <p><strong>My role:</strong> Backend/platform engineer and tech lead for CI infrastructure.</p>
+          <ul>
+            <li>Reduced flaky build failures by 43% with deterministic test containers and rerun heuristics.</li>
+            <li>Saved ~120 engineering hours/month by automating failure triage and notifications.</li>
+            <li>Lowered median pipeline duration from 19m to 11m across 40+ repos.</li>
+          </ul>
+          <p class="links">
+            <a href="https://github.com/example/ci-toolkit">Source</a>
+            <a href="https://video.example.com/ci-talk">Demo talk</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Let’s Work Together</h2>
+      <p><strong>Hire me</strong> for product engineering, performance optimization, and full-stack delivery. I’m open to contract, fractional, and full-time opportunities.</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="https://cal.com/your-handle">Book a call</a>
+        <a class="btn btn-secondary" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/your-handle">Collaborate on LinkedIn</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Trust & Social Proof</h2>
+      <article class="card">
+        <p class="quote">“They turned a complex analytics backlog into a clear roadmap and shipped meaningful wins in weeks, not months.” — Director of Product, B2B SaaS</p>
+        <p class="quote">“Exceptionally strong at translating business goals into technical execution. Our delivery confidence improved immediately.” — Engineering Manager, Fintech</p>
+        <p>Recognitions & talks: Speaker at DevOpsDays 2025 (“Taming Flaky Pipelines”), Winner of Internal Innovation Award (Q3 2024), Mentored 8 early-career engineers through company guild programs.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
