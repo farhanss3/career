@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Career Services</title>
+    <meta name="description" content="Career services resources, sections, and calls to action." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Career Services" />
+    <meta property="og:description" content="Explore career resources and take next steps." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/career" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" />
+
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --text: #101828;
+        --muted: #344054;
+        --surface: #f9fafb;
+        --brand: #0b5fff;
+        --focus: #d97706;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: #111827;
+        color: #fff;
+        padding: 0.6rem 0.9rem;
+        z-index: 1000;
+      }
+      .skip-link:focus-visible {
+        left: 1rem;
+        top: 1rem;
+      }
+      a { color: var(--brand); }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      header, nav, main, section, footer {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .hero {
+        background: var(--surface);
+        border-radius: 12px;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #d0d5dd;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+      .btn {
+        border: none;
+        background: var(--brand);
+        color: #fff;
+        padding: 0.65rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .muted { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+      <h1>Career Services</h1>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#workshops">Workshops</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title" data-section="hero">
+        <h2 id="hero-title">Build your career with confidence</h2>
+        <p class="muted">Resume reviews, mentorship, and interview prep with measurable outcomes.</p>
+        <button class="btn" data-cta="book-session">Book a coaching session</button>
+      </section>
+
+      <section id="resources" aria-labelledby="resources-title" data-section="resources">
+        <h2 id="resources-title">Resources</h2>
+        <picture>
+          <source media="(max-width: 700px)" srcset="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=70" />
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=75"
+            alt="Professionals collaborating at a desk"
+            loading="lazy"
+            decoding="async"
+            width="1400"
+            height="700"
+            style="max-width: 100%; height: auto; border-radius: 10px;"
+          />
+        </picture>
+      </section>
+
+      <section id="workshops" aria-labelledby="workshops-title" data-section="workshops">
+        <h2 id="workshops-title">Upcoming workshops</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Resume Mastery</h3>
+            <p>Learn to tailor your resume for modern ATS systems.</p>
+          </article>
+          <article class="card">
+            <h3>Interview Confidence</h3>
+            <p>Practice behavioral and technical interviews with structured feedback.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" data-section="contact">
+      <h2>Contact</h2>
+      <p>Email us at <a href="mailto:career@example.com">career@example.com</a></p>
+    </footer>
+
+    <script>
+      (() => {
+        const sendAnalytics = (event, payload) => {
+          const body = JSON.stringify({ event, payload, ts: Date.now() });
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon('/analytics', body);
+          } else {
+            fetch('/analytics', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body,
+              keepalive: true
+            }).catch(() => {});
+          }
+          console.log('[analytics]', event, payload);
+        };
+
+        const sections = document.querySelectorAll('[data-section]');
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              sendAnalytics('section_view', { section: entry.target.dataset.section });
+              observer.unobserve(entry.target);
+            }
+          }
+        }, { threshold: 0.4 });
+
+        sections.forEach((section) => observer.observe(section));
+
+        document.querySelectorAll('[data-cta]').forEach((cta) => {
+          cta.addEventListener('click', () => {
+            sendAnalytics('cta_click', { id: cta.dataset.cta });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
